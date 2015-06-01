@@ -1,6 +1,6 @@
-var controller = require('../controllers/controller');
+import controller from '../controllers/controller';
 
-var routes = {	
+const routes = {	
 	'/item': {
 		post: controller.postItem
 	},
@@ -14,4 +14,4 @@ var routes = {
 	}
 };
 
-module.exports = routes;
+export default controller;

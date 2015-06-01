@@ -3,7 +3,7 @@ var controllers = {
 	postItem: function(req, res, next) {
 		console.log('POST: ', req.query);
 		res.json({
-            type: true,
+            title: 'POST',
             data: 'Ok'
         });
 	},
@@ -11,7 +11,7 @@ var controllers = {
 	// GET endpoint /item:id
 	getItem: function(req, res) {
 		console.log('GET');
-		res.json({'title': 'Test', 'value': req.params.id});
+		res.json({'title': 'GET', 'value': req.params.id});
 	},
 
 	// PUT endpoint /item:id
@@ -27,4 +27,4 @@ var controllers = {
 	},
 };
 
-module.exports = controllers;
+export default controllers;

@@ -1,8 +1,10 @@
-var passport      = require('passport');
-var BasicStrategy = require('passport-http').BasicStrategy;
+import passport 	from 'passport';
+import passportHttp from 'passport-http';
 
-// This needs some addational logic. Sync with DB or place behind private repository.
-var user = {
+const {BasicStrategy} = passportHttp;
+
+// This is a very simple strategy. Not recommended for production.
+const user = {
 	apiKey: '123456',
 	apiSecret: 'abcdef'
 };
@@ -25,4 +27,6 @@ passport.use(new BasicStrategy({
 	}
 ));
 
-exports.isAuthenticated = passport.authenticate('basic', { session : false });
+export default {
+	isAuthenticated: passport.authenticate('basic', { session : false })
+}
