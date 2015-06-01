@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                 script: 'dracoolapi.js',
                 options: {
                     "execMap": {
-                        "js": "iojs"
+                        "js": "NODE_ENV=dev iojs node_modules/traceur-runner/bin/traceur-runner.js"
                     },
                     nodeArgs: ['--debug'],
                     env: {
