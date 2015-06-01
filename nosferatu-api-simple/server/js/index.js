@@ -1,7 +1,7 @@
-import restify from 'restify';
+import restify  from 'restify';
 import passport from 'passport';
-import config from '../../node-config';
-import routes from './routes';
+import config   from '../../node-config';
+import routes   from './routes';
 
 const serverSettings = config[process.env.NODE_ENV]
 
