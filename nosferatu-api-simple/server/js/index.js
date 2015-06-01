@@ -1,10 +1,9 @@
-var restify  = require('restify'),
-    passport = require('passport'),
-    path     = require('path'),
-    config   = require('./config'),
-    routes   = require('./routes'),
-    auth     = require('./utils/auth'),
-    appRoot  = config.paths.appRoot;
+import restify from 'restify';
+import passport from 'passport';
+import config from '../../node-config';
+import routes from './routes';
+
+const serverSettings = config[process.env.NODE_ENV]
 
 function init() {
     setupServer();
@@ -21,8 +20,6 @@ function setupServer() {
         .use(restify.gzipResponse())
         .use(restify.CORS())
         .use(restify.queryParser({ mapParams: false }))
-        // Initialize Passport!  Note: no need to use session middleware when each
-        // request carries authentication credentials, as is the case with basic strategy
         .use(passport.initialize());
 
     server.use(function logger(req,res,next) {
@@ -31,7 +28,7 @@ function setupServer() {
     });
 
     // Start server
-    server.listen(config.server.port, config.server.host, function() {
+    server.listen(serverSettings.server.port, serverSettings.server.host, function() {
         console.log('%s listening at %s', server.name, server.url);
     });
 
@@ -39,4 +36,4 @@ function setupServer() {
     routes.set(server, ['capi']);
 }
 
-module.exports = init;
+export default init;

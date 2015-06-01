@@ -22,6 +22,8 @@
     "lodash": "^3.8.0",
     "passport": "^0.2.1",
     "passport-http": "^0.2.2",
-    "restify": "^3.0.2"
+    "restify": "^3.0.2",
+    "traceur": "0.0.89",
+    "traceur-runner": "^2.0.1"
   }
 }
