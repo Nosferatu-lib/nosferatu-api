@@ -11,3 +11,6 @@ Go to `capi.js` and change/add routes for your project.
 `grunt nodemon`
 
 To see changes on the run.
+
+####Versions
+[Simple](https://github.com/Nosferatu-lib/nosferatu-api/tree/master/nosferatu-api-simple) -  Very simple version with basic authorisation
